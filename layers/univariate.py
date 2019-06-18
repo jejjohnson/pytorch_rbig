@@ -1,11 +1,12 @@
 import torch
 import torch.nn as nn
 import torch.distributions.transforms as transform
+from torch.distributions.transforms import Transform 
 import torch.nn.functional as F
 import torch.distributions as distrib
 from torch.distributions import Uniform
 
-class UnivariateNormalize(nn.Module):
+class UnivariateNormalize(Transform):
     def __init__(self, histogram):
         super(UnivariateNormalize, self).__init__()
 
